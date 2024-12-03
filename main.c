@@ -22,3 +22,8 @@ void fullAdder(int *a, int *b, int *carryIn, int *sum, int *carryOut) {
     printf("Sum: %d\n", *sum);
     printf("Carry-out: %d\n", *carryOut);
 }
+
+void fullSubtractor(int *a, int *b, int *carryIn, int *difference, int *borrow) {
+    *difference = (*a ^ *b) ^ *carryIn;
+    *borrow = (~(*a) & *b) | ((*b ^ ~(*a)) & *carryIn);
+}
