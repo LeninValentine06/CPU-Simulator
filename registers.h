@@ -30,11 +30,11 @@ struct registers{
 };
 
 void flag(struct registers *c){
-    if(c->FR % 10000000 == 1){
+    if(c->FR & 0x01){
         printf("Halt Flag");
     }
     
-    if(c->FR % 1000000 - c->FR % 10000000 == 1){
+    if(c->FR & 0x02){
         printf("Interrupt Enable Flag");
     }
 }
